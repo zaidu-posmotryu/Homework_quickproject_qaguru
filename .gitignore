@@ -16,3 +16,4 @@ out/
 gradlew.bat
 /.idea/
 /.gradle/
+/src/main/
