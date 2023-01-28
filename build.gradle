@@ -53,8 +53,8 @@ tasks.withType(Test) {
     }
 }
 
-task systemProperties(type: Test) {
-    useJUnitPlatform{
-        includeTags("systemPropertiesTest")
+task systemPropertiesTest(type: Test) {
+    useJUnitPlatform {
+        includeTags("trySystemProperties")
     }
 }

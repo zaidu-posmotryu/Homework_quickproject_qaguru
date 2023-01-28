@@ -4,6 +4,7 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
@@ -13,7 +14,7 @@ public class PageWildBerries {
     @Step("Открыть сайт")
     public PageWildBerries openWebsite() {
         open(baseUrl);
-    return this;
+        return this;
     }
 
     @Step("Сделать поисковый запрос, введя {phone} в строку поиска")
