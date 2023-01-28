@@ -14,8 +14,8 @@ compileTestJava {
     options.encoding = 'UTF-8'
 }
 
-def allureVersion = "2.19.0",
-    slf4jVersion = "1.7.32"
+def allureVersion = "2.20.0",
+    slf4jVersion = "2.0.5"
 
 
 allure {
@@ -26,8 +26,7 @@ allure {
         aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                aspectjVersion = "1.9.9"
-                //adapterVersion.set(allureVersion)
+                adapterVersion.set(allureVersion)
             }
         }
     }
@@ -43,6 +42,7 @@ dependencies {
 }
 
 tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
 
     testLogging {
@@ -53,4 +53,8 @@ tasks.withType(Test) {
     }
 }
 
-test {}
+task systemProperties(type: Test) {
+    useJUnitPlatform{
+        includeTags("systemPropertiesTest")
+    }
+}

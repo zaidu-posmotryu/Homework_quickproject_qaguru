@@ -13,7 +13,7 @@ public class TestWildBerries extends test.java.BaseTest {
     String phone = "iphone", model = "iphone 12", brand = "Apple";
 
     @Test
-    @Tag("test1")
+    @Tag("systemPropertiesTest")
     @Feature("Проверка поиска телефонов на Wildberries.ru")
     @Story("Найти модель iPhone 12 синего цвета")
     @DisplayName("Проверяем автоподсказку в строке поиска и фильтр цвета")
