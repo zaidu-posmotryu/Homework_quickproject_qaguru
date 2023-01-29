@@ -18,23 +18,21 @@ ________
 2. клике на автоподсказку
 3. установке определенного параметра в фильтре результатов
 
-### <img src="images/logo/Jenkins.svg" width="40" height="40"/> Параметризованная сборка в Jenkins [Jenkins](https://jenkins.autotests.cloud/job/016-sun_of_summer-Homework-quickproject/build?delay=0sec) 
+### <img src="images/logo/Jenkins.svg" width="40" height="40"/> Параметризованная сборка в [Jenkins](https://jenkins.autotests.cloud/job/016-sun_of_summer-Homework-quickproject/build?delay=0sec) 
 
-<img src="images/screenshots/job.png" width="80%" height="80%"/>  
+<img src="images/screenshots/jenkins_job.png" width="80%" height="80%"/>  
 
-Чтобы увидеть отчёт о прохождении тестов в Allure Report, нужно кликнуть на иконку **"Allure Report"**  
+### <img src="images/logo/Allure_Report.svg" width="50" height="50"/> Чтобы увидеть отчёт о прохождении тестов в Allure Report, нужно кликнуть на иконку **"Allure Report"**  
 
-<img src="images/logo/Allure_Report.svg" width="50" height="50"/>
+ <img src="images/screenshots/allure-overview.PNG" width="80%" height="80%"/>  
 
- <img src="images/screenshots/allure_report.png" width="80%" height="80%"/>  
-
- <img src="images/screenshots/allure_report.png" width="80%" height="80%"/>  // второй скриншот!
+ <img src="images/screenshots/allure-behaviors.PNG" width="80%" height="80%"/>  
 
 ### <img src="images/logo/Selenoid.svg" width="40" height="40"/> Видео прохождения тестов в Selenoid  
 
-![Alt text](gif_file.gif) 
+![Alt text](selenoid-test-video.gif) 
  
 
 ### <img src="images/logo/Telegram.svg" width="30" height="30"/> Уведомления о прохождении тестов в Telegram  
 
-<img src="images/screenshots/telegram_bot.png" width="30%" height="30%" />  
+<img src="images/screenshots/telegram-bot.PNG" width="30%" height="30%" />  
