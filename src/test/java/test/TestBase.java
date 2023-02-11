@@ -1,4 +1,4 @@
-package test.java;
+package test;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 
-public class BaseTest {
+public class TestBase {
 
     @BeforeAll
     static void beforeAll() {

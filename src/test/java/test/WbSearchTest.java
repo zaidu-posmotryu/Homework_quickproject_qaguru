@@ -1,4 +1,4 @@
-package test.java;
+package test;
 
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
@@ -6,9 +6,9 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class TestWildBerries extends test.java.BaseTest {
+public class WbSearchTest extends TestBase {
 
-    PageWildBerries pageWildBerries = new PageWildBerries();
+    WbSearchPage wbSearchPage = new WbSearchPage();
     String phone = "iphone", model = "iphone 12", brand = "Apple";
 
     @Test
@@ -17,7 +17,7 @@ public class TestWildBerries extends test.java.BaseTest {
     @DisplayName("Проверяем автоподсказку в строке поиска и фильтр цвета")
     @Owner("Daria Cherchimtseva")
     public void wildBerriesHasIphone() {
-        pageWildBerries
+        wbSearchPage
                 .openWebsite()
                 .inputSearchPhone(phone)
                 .checkSearchPhone(phone)
