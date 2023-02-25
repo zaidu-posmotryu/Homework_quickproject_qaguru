@@ -1,10 +1,9 @@
 package test;
 
-import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import pages.WbSearchPage;
 
 public class WbSearchTest extends TestBase {
 
@@ -12,8 +11,8 @@ public class WbSearchTest extends TestBase {
     String phone = "iphone", model = "iphone 12", brand = "Apple";
 
     @Test
-    @Feature("Проверка поиска телефонов на Wildberries.ru")
-    @Story("Найти модель iPhone 12 синего цвета")
+    //@Feature("Проверка поиска телефонов на Wildberries.ru")
+    //@Story("Найти модель iPhone 12 синего цвета")
     @DisplayName("Проверяем автоподсказку в строке поиска и фильтр цвета")
     @Owner("Daria Cherchimtseva")
     public void wildBerriesHasIphone() {
