@@ -24,6 +24,7 @@ public class TestBase {
         Configuration.baseUrl = System.getProperty("baseUrl", "https://www.wildberries.ru/");
         Configuration.timeout = 10000;
         Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+        Configuration.pageLoadStrategy = "eager";
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
