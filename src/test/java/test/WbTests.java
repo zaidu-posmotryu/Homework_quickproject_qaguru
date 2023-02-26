@@ -10,7 +10,7 @@ public class WbTests extends TestBase {
 
     SearchPage searchPage = new SearchPage();
     CountryDetailsPage countryDetailsPage = new CountryDetailsPage();
-    String phone = "iphone", model = "iphone 12", brand = "Apple";
+    String phone = "iphone", model = "iphone 12", brand = "Apple", currency = "тг.", city = "Алматы", newaddress = "Думан";
 
     @BeforeEach
     void searchInput() {
@@ -56,13 +56,13 @@ public class WbTests extends TestBase {
     @Test
     @DisplayName("Сменить валюту и проверить, что цены отображаются в новой валюте")
     public void countryCurrency() {
-        countryDetailsPage.changeCurrency();
+        countryDetailsPage.changeCurrency(currency);
     }
 
     @Test
     @DisplayName("Смена адреса выдачи")
     public void deliveryAddress() {
-        countryDetailsPage.changeDeliveryAddress();
+        countryDetailsPage.findDeliveryAddress(city,newaddress);
 
     }
 

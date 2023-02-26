@@ -1,6 +1,6 @@
 {
   "base": {
-    "project": "Quick_Project_homework:Wildberries_search",
+    "project": "Quick_Project_homework:Wildberries",
     "environment": "удаленный запуск с selenoid",
     "comment": "оно работает",
     "reportLink": "",

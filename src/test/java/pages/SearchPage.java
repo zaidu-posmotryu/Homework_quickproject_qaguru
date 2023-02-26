@@ -22,8 +22,8 @@ public class SearchPage {
             buttonQuickView = $x("//button[contains(@type,'button')][contains(text(),'Быстрый просмотр')]"),
             popupQuickView = $x("//div[@class='product']"),
 
-    article = $x("//span[contains(text(),'Артикул:')]"),
-    productId = $x("//span[@id='productNmId']");
+            article = $x("//span[contains(text(),'Артикул:')]"),
+            productId = $x("//span[@id='productNmId']");
 
     ElementsCollection
             results = $$x("//span[@class='goods-name']"),
