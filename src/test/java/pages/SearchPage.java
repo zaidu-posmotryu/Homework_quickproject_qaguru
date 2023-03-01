@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SearchPage {
     SelenideElement
             searchInput = $x("//input[@id='searchInput']"),
+    catalog = $x("//div[@class='product-card-list']"),
             autoHintText = $x("//div[@class='autocomplete__scroll-container']"),
             queryFilter = $x("//button[@class='dropdown-filter__btn dropdown-filter__btn--burger']"),
             filterColor = $x("//button[contains(text(),'Цвет')]"),
@@ -21,7 +22,6 @@ public class SearchPage {
             productCard = $x("//a[@class='product-card__main j-card-link']"),
             buttonQuickView = $x("//button[contains(@type,'button')][contains(text(),'Быстрый просмотр')]"),
             popupQuickView = $x("//div[@class='product']"),
-
             article = $x("//span[contains(text(),'Артикул:')]"),
             productId = $x("//span[@id='productNmId']");
 
@@ -41,6 +41,8 @@ public class SearchPage {
     public SearchPage inputSearchPhone(String phone) {
         searchInput.click();
         searchInput.setValue(phone).pressEnter();
+        catalog.shouldBe(visible);
+
         return this;
     }
 
