@@ -22,7 +22,7 @@ public class TestBase {
         Configuration.browserVersion = System.getProperty("browserVersion", "100");
         Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
         Configuration.baseUrl = System.getProperty("baseUrl", "https://www.wildberries.ru/");
-        Configuration.pageLoadTimeout = 10000;
+        Configuration.pageLoadTimeout = 30000;
         Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
         Configuration.pageLoadStrategy = "eager";
 
