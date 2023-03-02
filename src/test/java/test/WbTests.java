@@ -12,23 +12,28 @@ public class WbTests extends TestBase {
     CountryDetailsPage countryDetailsPage = new CountryDetailsPage();
     String phone = "iphone", model = "iphone 12", brand = "Apple", currency = "тг.", city = "Алматы", newaddress = "Думан";
 
-    @BeforeEach
+   /* @BeforeEach
     void searchInput() {
         searchPage
                 .openWebsite()
                 .inputSearchPhone(phone);
-    }
+    }*/
 
     @Test
     @DisplayName("Проверяем работу поисковой строки")
     public void searchCheck() {
-        searchPage.checkSearchPhone(phone);
+        searchPage
+                .openWebsite()
+                .inputSearchPhone(phone)
+                .checkSearchPhone(phone);
     }
 
     @Test
     @DisplayName("Проверяем работу автоподсказки в поисковой строке")
     public void autoHint() {
         searchPage
+                .openWebsite()
+                .inputSearchPhone(phone)
                 .searchAutocompleteHintPhoneModel(model)
                 .searchFilterPhoneModelBrand(model, brand);
     }
@@ -37,6 +42,8 @@ public class WbTests extends TestBase {
     @DisplayName("Проверяем работу фильтра цвета")
     public void colorFilter() {
         searchPage
+                .openWebsite()
+                .inputSearchPhone(phone)
                 .chooseBluePhones()
                 .searchFilterBlueAndBrand(brand);
     }
@@ -44,18 +51,27 @@ public class WbTests extends TestBase {
     @Test
     @DisplayName("Проверяем, что работает окно быстрого просмотра")
     public void quickView() {
-        searchPage.hoverForQuickView();
+        searchPage
+                .openWebsite()
+                .inputSearchPhone(phone)
+                .hoverForQuickView();
     }
 
     @Test
     @DisplayName("Страница товара")
     public void onProductPage() {
-        searchPage.goToProductPage();
+        searchPage
+                .openWebsite()
+                .inputSearchPhone(phone)
+                .goToProductPage();
     }
 
     @Test
     @DisplayName("Сменить валюту и проверить, что цены отображаются в новой валюте")
     public void countryCurrency() {
+        searchPage
+                .openWebsite()
+                .inputSearchPhone(phone);
         countryDetailsPage.changeCurrency(currency);
     }
 
