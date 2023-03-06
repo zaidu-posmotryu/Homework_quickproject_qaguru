@@ -4,34 +4,25 @@ import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.selector.ByText;
 import io.qameta.allure.Step;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.files.DownloadActions.click;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CountryDetailsPage {
     String newaddress = "г. Алматы, улица Курмангазы, д. 97";
     SelenideElement
-    currencyActual = $x("//span[@class='simple-menu__currency']"),
-    countryLegend = $x("//legend[@class='country__title']"),
-    currencyFlag = $x("//span[@class='radio-with-text__flag flag-kz']"),
-    addresses = $x("//a[@data-wba-header-name='Pick_up_points']"),
-    addressInput = $x("(//input[@placeholder='Введите адрес'])[1]"),
-    popupList = $x("//ymaps[@class='ymaps-2-1-79-islets_serp-popup']"),
-    newcity = $x("//ymaps[@class='ymaps-2-1-79-islets_serp-item__title']"),
-    addressItemName = $x("//span[contains(text(),'"+ newaddress +"')]"),
-    //div[@class='address-item__name']/span
-    addressPopup = $x("//ymaps[@class='ymaps-2-1-79-balloon__content']");
-
+            currencyActual = $x("//span[@class='simple-menu__currency']"),
+            countryLegend = $x("//legend[@class='country__title']"),
+            currencyFlag = $x("//span[@class='radio-with-text__flag flag-kz']"),
+            addresses = $x("//a[@data-wba-header-name='Pick_up_points']"),
+            addressInput = $x("(//input[@placeholder='Введите адрес'])[1]"),
+            popupList = $x("//ymaps[@class='ymaps-2-1-79-islets_serp-popup']"),
+            newcity = $x("//ymaps[@class='ymaps-2-1-79-islets_serp-item__title']"),
+            addressItemName = $x("//span[contains(text(),'" + newaddress + "')]"),
+            addressPopup = $x("//ymaps[@class='ymaps-2-1-79-balloon__content']");
     ElementsCollection
-    resultsNewCurr = $$x("//div[@class='product-card__price price j-cataloger-price']");
-
+            resultsNewCurr = $$x("//div[@class='product-card__price price j-cataloger-price']");
 
     @Step("Проверить смену валюты")
     public CountryDetailsPage changeCurrency(String value) {
@@ -40,7 +31,8 @@ public class CountryDetailsPage {
         currencyFlag.click();
         resultsNewCurr.shouldHave(CollectionCondition.sizeGreaterThan(0));
         for (SelenideElement element : resultsNewCurr) {
-            element.shouldHave(text(value)); }
+            element.shouldHave(text(value));
+        }
         return this;
     }
 

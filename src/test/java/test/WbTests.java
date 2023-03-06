@@ -23,6 +23,7 @@ public class WbTests extends TestBase {
     @Test
     @Story("Проверка поиска по сайту")
     @DisplayName("Проверяем работу поисковой строки")
+
     public void searchCheck() {
         productSearchPage.checkSearchPhone(phone);
     }
@@ -47,14 +48,14 @@ public class WbTests extends TestBase {
 
     @Test
     @Story("Проверка поиска по сайту")
-    @DisplayName("Проверяем, что работает окно быстрого просмотра")
+    @DisplayName("Проверяем, что отображается окно быстрого просмотра")
     public void quickView() {
         productSearchPage.hoverForQuickView();
     }
 
     @Test
     @Story("Проверка поиска по сайту")
-    @DisplayName("Страница товара")
+    @DisplayName("Проверяем переход на страницу товара")
     public void onProductPage() {
         productSearchPage.goToProductPage();
     }

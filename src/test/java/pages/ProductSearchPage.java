@@ -1,10 +1,10 @@
 package pages;
 
-import com.codeborne.selenide.*;
+import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-
 import java.time.Duration;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ProductSearchPage {
     SelenideElement
             searchBox = $x("//*[@id='searchInput']"),
-    catalog = $x("//div[@class='product-card-list']"),
+            catalog = $x("//div[@class='product-card-list']"),
             autoHintText = $x("//div[@class='autocomplete__scroll-container']"),
             queryFilter = $x("//button[@class='dropdown-filter__btn dropdown-filter__btn--burger']"),
             filterColor = $x("//button[contains(text(),'Цвет')]"),
@@ -27,7 +27,6 @@ public class ProductSearchPage {
             popupQuickView = $x("//div[@class='product']"),
             article = $x("//span[contains(text(),'Артикул:')]"),
             productId = $x("//span[@id='productNmId']");
-
     ElementsCollection
             results = $$x("//span[@class='goods-name']"),
             autoHints = $$x("//p[@class='autocomplete__text']"),
@@ -45,6 +44,7 @@ public class ProductSearchPage {
         searchBox.scrollTo().click();
         searchBox.setValue(phone).pressEnter();
         catalog.shouldBe(visible, Duration.ofMillis(4000));
+        sleep(4000);
         return this;
     }
 
@@ -108,10 +108,9 @@ public class ProductSearchPage {
         productCard.click();
         article.shouldBe(visible);
         String currentUrl = url();
-        String articleFromUrl = currentUrl.substring(35,44);
+        String articleFromUrl = currentUrl.substring(35, 44);
         String productIdText = productId.getText();
         assertEquals(articleFromUrl, productIdText);
         return this;
     }
-
 }
