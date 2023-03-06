@@ -42,10 +42,14 @@ public class CountryDetailsPage {
     @Step("Проверить смену адреса пункта выдачи")
     public CountryDetailsPage findDeliveryAddress(String city, String newaddress) {
         addresses.click();
-        addressInput.setValue(city).click();
+        addressInput.scrollTo().setValue(city).pressEnter();
         popupList.shouldBe(visible);
-        newcity.find(new ByText(city)).click();
-        addressItemName.find(new ByText(newaddress)).click();
+        newcity.shouldHave(text((city))).click();
+        addressItemName
+                .scrollIntoView()
+                .shouldHave(text(newaddress))
+
+                .click();
         addressPopup.shouldBe(visible);
         return this;
     }
