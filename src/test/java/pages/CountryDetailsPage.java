@@ -10,10 +10,13 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.files.DownloadActions.click;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CountryDetailsPage {
+    String newaddress = "г. Алматы, улица Курмангазы, д. 97";
     SelenideElement
     currencyActual = $x("//span[@class='simple-menu__currency']"),
     countryLegend = $x("//legend[@class='country__title']"),
@@ -22,11 +25,13 @@ public class CountryDetailsPage {
     addressInput = $x("(//input[@placeholder='Введите адрес'])[1]"),
     popupList = $x("//ymaps[@class='ymaps-2-1-79-islets_serp-popup']"),
     newcity = $x("//ymaps[@class='ymaps-2-1-79-islets_serp-item__title']"),
-    addressItemName = $x("//div[@class='address-item__name']"),
+    addressItemName = $x("//span[contains(text(),'"+ newaddress +"')]"),
+    //div[@class='address-item__name']/span
     addressPopup = $x("//ymaps[@class='ymaps-2-1-79-balloon__content']");
 
     ElementsCollection
     resultsNewCurr = $$x("//div[@class='product-card__price price j-cataloger-price']");
+
 
     @Step("Проверить смену валюты")
     public CountryDetailsPage changeCurrency(String value) {
@@ -39,20 +44,15 @@ public class CountryDetailsPage {
         return this;
     }
 
-    @Step("Проверить смену адреса пункта выдачи")
-    public CountryDetailsPage findDeliveryAddress(String city, String newaddress) {
+    @Step("Проверить поиск инфо об адресе пункта выдачи")
+    public CountryDetailsPage findDeliveryAddress(String city) {
         addresses.click();
         addressInput.scrollTo().setValue(city).pressEnter();
         popupList.shouldBe(visible);
         newcity.shouldHave(text((city))).click();
-        addressItemName
-                .scrollIntoView()
-                .shouldHave(text(newaddress))
-
-                .click();
+        sleep(4000);
+        addressItemName.scrollTo().click();
         addressPopup.shouldBe(visible);
         return this;
     }
-
-
 }
