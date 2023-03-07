@@ -43,7 +43,7 @@ public class CountryDetailsPage {
         popupList.shouldBe(visible);
         newcity.shouldHave(text((city))).click();
         sleep(4000);
-        addressItemName.scrollTo().click();
+        addressItemName.click();
         addressPopup.shouldBe(visible);
         return this;
     }

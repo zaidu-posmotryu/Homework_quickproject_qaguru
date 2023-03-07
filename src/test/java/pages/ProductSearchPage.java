@@ -46,7 +46,6 @@ public class ProductSearchPage {
         searchBox.scrollTo().click();
         searchBox.setValue(phone);
         searchBtn.click();
-       // sleep(5000);
         catalog.shouldBe(visible, Duration.ofMillis(4000));
         return this;
     }

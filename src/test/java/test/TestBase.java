@@ -22,7 +22,7 @@ public class TestBase {
         Configuration.baseUrl = System.getProperty("baseUrl", "https://www.wildberries.ru/");
         Configuration.pageLoadTimeout = 40000;
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
+      //  Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
