@@ -2,27 +2,23 @@ package test;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import configs.WebDriverProvider;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import java.util.Map;
+
 import static com.codeborne.selenide.Selenide.clearBrowserCookies;
 
 public class TestBase {
 
     @BeforeAll
-    static void beforeAll() {
-
+    static void configure() {
+        WebDriverProvider.configuration();
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "100");
-        Configuration.browserSize = System.getProperty("browserSize", "2048x1152");
-        Configuration.baseUrl = System.getProperty("baseUrl", "https://www.wildberries.ru/");
-        Configuration.pageLoadTimeout = 40000;
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
@@ -40,3 +36,12 @@ public class TestBase {
         clearBrowserCookies();
     }
 }
+
+//SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+//        Configuration.browser = System.getProperty("browser", "chrome");
+//        Configuration.browserVersion = System.getProperty("browserVersion", "100");
+//        Configuration.browserSize = System.getProperty("browserSize", "2048x1152");
+//        Configuration.baseUrl = System.getProperty("baseUrl", "https://www.wildberries.ru/");
+//        Configuration.pageLoadTimeout = 40000;
+//        Configuration.pageLoadStrategy = "eager";
+////  Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");

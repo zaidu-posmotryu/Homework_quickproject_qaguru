@@ -12,6 +12,7 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProductSearchPage {
+    String color = "синий";
     SelenideElement
             searchBox = $x("//*[@id='searchInput']"),
             searchBtn = $x("//button[@id='applySearchBtn']"),
@@ -20,7 +21,7 @@ public class ProductSearchPage {
             queryFilter = $x("//button[@class='dropdown-filter__btn dropdown-filter__btn--burger']"),
             filterColor = $x("//button[contains(text(),'Цвет')]"),
             dropdownColor = $x("(//div[@class='dropdown-filter__content'])[5]"),
-            selectedColor = $x("//span[contains(text(),'синий')]//span[@class='checkbox-with-text__color']"),
+            selectedColor = $x("//span[contains(text(),'" + color + "')]//span[@class='checkbox-with-text__color']"),
             submitButtonColor = $x("//button[contains(text(),'Готово')]"),
             chosenParameter = $x("//span[@class='your-choice__btn']"),
             productCard = $x("//a[@class='product-card__main j-card-link']"),

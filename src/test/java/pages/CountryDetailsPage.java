@@ -5,6 +5,9 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
+
+import java.util.List;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.*;
@@ -22,7 +25,8 @@ public class CountryDetailsPage {
             addressItemName = $x("//span[contains(text(),'" + newaddress + "')]"),
             addressPopup = $x("//ymaps[@class='ymaps-2-1-79-balloon__content']");
     ElementsCollection
-            resultsNewCurr = $$x("//div[@class='product-card__price price j-cataloger-price']");
+            resultsNewCurr = $$x("//div[@class='product-card__price price j-cataloger-price']"),
+            deliveryBanner = $$x("//li[@class='service-menu__item']//a");
 
     @Step("Проверить смену валюты")
     public CountryDetailsPage changeCurrency(String value) {
@@ -45,6 +49,13 @@ public class CountryDetailsPage {
         sleep(4000);
         addressItemName.click();
         addressPopup.shouldBe(visible);
+        return this;
+    }
+
+    @Step("Проверить наличие правильного текста в баннере")
+    public CountryDetailsPage checkBannerText(List<String> menuTexts) {
+        addresses.click();
+        deliveryBanner.shouldHave(CollectionCondition.texts(menuTexts));
         return this;
     }
 }

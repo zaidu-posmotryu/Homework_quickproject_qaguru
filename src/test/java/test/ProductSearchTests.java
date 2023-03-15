@@ -4,14 +4,12 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import pages.CountryDetailsPage;
 import pages.ProductSearchPage;
 
-public class WbTests extends TestBase {
+public class ProductSearchTests extends TestBase {
 
     ProductSearchPage productSearchPage = new ProductSearchPage();
-    CountryDetailsPage countryDetailsPage = new CountryDetailsPage();
-    String phone = "iphone", model = "iphone 12", brand = "Apple", currency = "тг.", city = "Алматы";
+    String phone = "iphone", model = "iphone 12", brand = "Apple";
 
     @BeforeEach
     void searchProduct() {
@@ -23,7 +21,6 @@ public class WbTests extends TestBase {
     @Test
     @Story("Проверка поиска по сайту")
     @DisplayName("Проверяем работу поисковой строки")
-
     public void searchCheck() {
         productSearchPage.checkSearchPhone(phone);
     }
@@ -58,19 +55,5 @@ public class WbTests extends TestBase {
     @DisplayName("Проверяем переход на страницу товара")
     public void onProductPage() {
         productSearchPage.goToProductPage();
-    }
-
-    @Test
-    @Story("Проверка смены параметров покупателя")
-    @DisplayName("Сменить валюту и проверить, что цены отображаются в новой валюте")
-    public void countryCurrency() {
-        countryDetailsPage.changeCurrency(currency);
-    }
-
-    @Test
-    @Story("Проверка смены параметров покупателя")
-    @DisplayName("Смена адреса выдачи")
-    public void deliveryAddress() {
-        countryDetailsPage.findDeliveryAddress(city);
     }
 }
