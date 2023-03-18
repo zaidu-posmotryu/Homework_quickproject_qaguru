@@ -30,7 +30,7 @@ public class CountryDetailsTests extends TestBase {
 
     @Test
     @Story("Проверка смены параметров покупателя")
-    @DisplayName("Сменить валюту и проверить, что цены отображаются в новой валюте")
+    @DisplayName("Изменяем валюту и проверяем, что цены отображаются в новой валюте")
     public void countryCurrency() {
         productSearchPage.inputSearchPhone(phone);
         countryDetailsPage.changeCurrency(currency);
@@ -38,7 +38,7 @@ public class CountryDetailsTests extends TestBase {
 
     @Test
     @Story("Проверка смены параметров покупателя")
-    @DisplayName("Сменить город. проверить наличие определенного пункта в списке")
+    @DisplayName("Изменяем город доставки, проверяем наличие определенного пункта в списке")
     public void deliveryAddress() {
         countryDetailsPage.findDeliveryAddress(city);
     }
@@ -46,7 +46,7 @@ public class CountryDetailsTests extends TestBase {
     @MethodSource("deliveryBannerTextDataProvider")
     @ParameterizedTest
     @Story("Проверка смены параметров покупателя")
-    @DisplayName("Проверить, что в баннере нужный текст")
+    @DisplayName("Проверяем, что в баннере нужный текст")
     public void deliveryBannerTextCheck(List<String> menuTexts) {
         countryDetailsPage.checkBannerText(menuTexts);
     }
