@@ -43,11 +43,12 @@ public class CountryDetailsPage {
     @Step("Проверить поиск инфо об адресе пункта выдачи")
     public CountryDetailsPage findDeliveryAddress(String city) {
         addresses.click();
-        addressInput.scrollTo().setValue(city).pressEnter();
+        addressInput.scrollTo().shouldBe(visible).click();
+        addressInput.setValue(city).pressEnter();
         popupList.shouldBe(visible);
         newcity.shouldHave(text((city))).click();
         sleep(4000);
-        addressItemName.click();
+        addressItemName.scrollIntoView(true).click();
         addressPopup.shouldBe(visible);
         return this;
     }
