@@ -36,12 +36,3 @@ public class TestBase {
         clearBrowserCookies();
     }
 }
-
-//SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-//        Configuration.browser = System.getProperty("browser", "chrome");
-//        Configuration.browserVersion = System.getProperty("browserVersion", "100");
-//        Configuration.browserSize = System.getProperty("browserSize", "2048x1152");
-//        Configuration.baseUrl = System.getProperty("baseUrl", "https://www.wildberries.ru/");
-//        Configuration.pageLoadTimeout = 40000;
-//        Configuration.pageLoadStrategy = "eager";
-////  Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");

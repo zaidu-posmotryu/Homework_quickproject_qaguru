@@ -4,7 +4,7 @@ ________
 <img src="images/logo/Java.svg" width="50" height="50"/>   <img src="images/logo/Intelij_IDEA.svg" width="50" height="50"/>   <img src="images/logo/Gradle.svg" width="50" height="50"/>   <img src="images/logo/JUnit5.svg" width="50" height="50"/>   <img src="images/logo/Selenide.svg" width="50" height="50"/>   <img src="images/logo/GitHub.svg" width="50" height="50"/>   <img src="images/logo/Jenkins.svg" width="50" height="50"/>   <img src="images/logo/Selenoid.svg" width="50" height="50"/>   <img src="images/logo/Allure_Report.svg" width="50" height="50"/>   <img src="images/logo/Allure_TestOps.svg" width="50" height="50"/>      <img src="images/logo/Jira.png" width="50" height="50"/>   <img src="images/logo/Telegram.svg" width="50" height="50"/>
 
 -----
-* Написан на ``Java`` с использованием фреймворка ``Selenide``
+* Написаны на ``Java`` с использованием фреймворка ``Selenide``
 * Применяется фреймворк для модульного тестирования ``JUnit 5`` 
 * ``Gradle`` используется для автоматизированной сборки проекта
 * Удаленно тест запускается с помощью сервера``Jenkins``
@@ -42,10 +42,10 @@ ________
 
 <img src="images/screenshots/jira.PNG" width="80%" height="80%"/> 
 
-### <img src="images/logo/Selenoid.svg" width="30" height="30"/> Видео прохождения тестов в Selenoid  
+### <img src="images/logo/Selenoid.svg" width="30" height="30"/> Видео прохождения тестов в Selenoid
 
-![Alt text](selenoid-test-video.gif)
-
+![Alt text](images/selenoid-test-video.gif)
+![Alt text](images/selenoid2-test-video.gif)
 
 ### <img src="images/logo/Telegram.svg" width="30" height="30"/> Уведомления о прохождении тестов в Telegram  
 
